@@ -21,7 +21,7 @@
                         <td title="No unread posts">
                           
                             <p>
-                                <a href="Topics?discussroomid=<%#DataBinder.Eval(Container.DataItem, "ID")%> " class="forum-title"></strong><%#DataBinder.Eval(Container.DataItem, "Name")%>&nbsp;讨论室</a>
+                                <a href="Topics?discussroomid=<%#DataBinder.Eval(Container.DataItem, "ID")%>&courseid=<%=Request["courseid"]%> " class="forum-title"></strong><%#DataBinder.Eval(Container.DataItem, "Name")%>&nbsp;讨论室</a>
                                 <br /><%#DataBinder.Eval(Container.DataItem, "Description")%>
                             </p>
                         </td>
