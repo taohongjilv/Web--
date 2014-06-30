@@ -35,8 +35,8 @@
     <div class="content">
         <div class="breadcrumbs col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <a class="nav-text" href="#"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>&nbsp;&nbsp;
-                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">课程</a>&nbsp;&nbsp;
-                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">讨论室</a>
+                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="Forums?courseid=<%=Request["courseid"]%>">课程</a>&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="Topics?discussroomid=<%=Request["discussroomid"]%>">讨论室</a>
             <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">议题</a>
         </div>
 
