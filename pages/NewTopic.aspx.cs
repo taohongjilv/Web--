@@ -42,7 +42,6 @@ public partial class NewTopic : System.Web.UI.Page
         {
             i = Convert.ToInt32(reader[0].ToString());
         }
-        i++;
 
         string sql = "insert into Message (TopicID,postBody) values(" + i +",'" + messa + "')";
         SqlCommand cmd = new SqlCommand(sql, conn2);
