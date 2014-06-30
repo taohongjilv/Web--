@@ -33,7 +33,7 @@ public partial class NewTopic : System.Web.UI.Page
         string sql2 = "insert into Topic (DiscussRoomID, Title) values(" + roomid + ",'" + subject + "')";
         SqlCommand cmd2 = new SqlCommand(sql2, conn2);
         cmd2.ExecuteNonQuery();
-        string newTopic = "Topics?discussroomid=" + roomid;
+        
 
         string ifin = "select distinct id from Topic order by id ASC";
         SqlCommand cmd3 = new SqlCommand(ifin, conn);
@@ -49,7 +49,7 @@ public partial class NewTopic : System.Web.UI.Page
         reader.Close();
 
         
-        
+        string newTopic = "ViewTopic?topicid=" + i;
         Response.Redirect(newTopic);
 
         //conn.Close();
