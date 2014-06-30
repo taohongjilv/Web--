@@ -27,7 +27,7 @@ public partial class NewTopic : System.Web.UI.Page
         conn.Open();
         
 
-        string connection2 = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString2"].ConnectionString;
+        string connection2 = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString"].ConnectionString;
         SqlConnection conn2 = new SqlConnection(connection2);
         conn2.Open();
         string sql2 = "insert into Topic (DiscussRoomID, Title) values(" + roomid + ",'" + subject + "')";

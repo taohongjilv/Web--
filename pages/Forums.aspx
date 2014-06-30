@@ -53,7 +53,7 @@
                 </FooterTemplate>
             </asp:Repeater>   
 
-                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString6 %>" SelectCommand="SELECT * FROM [DiscussRoom] WHERE ([CourseId] = @CourseId)">
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString %>" SelectCommand="SELECT * FROM [DiscussRoom] WHERE ([CourseId] = @CourseId)">
                     <SelectParameters>
                         <asp:QueryStringParameter Name="CourseId" QueryStringField="courseid" Type="Int32" />
                     </SelectParameters>
@@ -86,7 +86,7 @@
                     </ItemTemplate>
                 </asp:Repeater>
 
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString7 %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString %>" SelectCommand="SELECT * FROM [Course]"></asp:SqlDataSource>
 
             </div>
             <!-- Sidebar content end -->

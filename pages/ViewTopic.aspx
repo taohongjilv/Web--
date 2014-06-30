@@ -93,7 +93,7 @@
 
 
 
-        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString8 %>" SelectCommand="SELECT * FROM [Message] WHERE ([TopicID] = @TopicID)">
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString %>" SelectCommand="SELECT * FROM [Message] WHERE ([TopicID] = @TopicID)">
             <SelectParameters>
                 <asp:QueryStringParameter Name="TopicID" QueryStringField="topicid" Type="Int32" />
             </SelectParameters>

@@ -78,7 +78,7 @@
             </table>
                 </FooterTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString4 %>" SelectCommand="SELECT * FROM [Topic] WHERE ([DiscussRoomID] = @DiscussRoomID)">
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString %>" SelectCommand="SELECT * FROM [Topic] WHERE ([DiscussRoomID] = @DiscussRoomID)">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="DiscussRoomID" QueryStringField="discussroomid" Type="Int32" />
                 </SelectParameters>
