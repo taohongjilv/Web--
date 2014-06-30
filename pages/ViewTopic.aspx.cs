@@ -23,7 +23,7 @@ public partial class ViewTopic : System.Web.UI.Page
         string connection = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString"].ConnectionString;
         SqlConnection conn = new SqlConnection(connection);
         conn.Open();
-        string sql = "insert into Message (TopicId, postBody,AuthorName) values(" + topic + ",'" + ss[0] + "','2011052406'" + ")";
+        string sql = "insert into Message (TopicId, postBody,AuthorName,Posted) values(" + topic + ",'" + ss[0] + "','2011052406','" + DateTime.Now.ToString() + "')";
         SqlCommand cmd = new SqlCommand(sql, conn);
         cmd.ExecuteNonQuery();
         Response.Redirect(url);

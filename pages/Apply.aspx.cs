@@ -35,19 +35,19 @@ public partial class Student_Apply : System.Web.UI.Page
         DateTime time = DateTime.Now;
         Boolean applyState = false;
         Boolean checkState = false;
-        string connection = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString"].ConnectionString;
-        SqlConnection con = new SqlConnection(connection);
-        
-        con.Open();
 
-        SqlCommand cmd = new SqlCommand("insert into Apply(Applyer,ApplyState,NameOfRoom,AddInfo,BuildTime,CheckState,CourseId) values('" + accountName + "','" + applyState + "','" + discussroomTitle + "','" + addInfo + "','" + time + "','" + checkState + "','" + courseId + "')", con);
+        string connection = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString"].ConnectionString;
+        SqlConnection conn = new SqlConnection(connection);
+        conn.Open();
+
+        SqlCommand cmd = new SqlCommand("insert into Apply(ApplyState,NameOfRoom,AddInfo,BuildTime,CheckState,CourseId) values('" + applyState + "','" + discussroomTitle + "','" + addInfo + "','" + time + "','" + checkState + "','" + courseId + "')", conn);
         cmd.ExecuteNonQuery();
       //  
         string newTopic = "Forums?courseid=" + course;
        // Response.Redirect("Apply.aspx");
        // Response.Write("<script> alert('提交成功')</script>");
         Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script>alert('提交成功');location.href='Apply.aspx';</script>");
-        con.Close();
+        conn.Close();
         Response.Redirect(newTopic);
     }
 }
