@@ -17,6 +17,7 @@ public partial class ViewTopic : System.Web.UI.Page
     }
     protected void submit2_Click(object sender, EventArgs e)
     {
+        string url = HttpContext.Current.Request.Url.ToString();
         string topic =url.Substring(url.IndexOf("=")+1, 2);
         string[] ss = Request.Form.GetValues("con");
         string connection = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString"].ConnectionString;
@@ -25,7 +26,6 @@ public partial class ViewTopic : System.Web.UI.Page
         string sql = "insert into Message (TopicId, postBody,AuthorName) values(" + topic + ",'" + ss[0] + "','2011052406'" + ")";
         SqlCommand cmd = new SqlCommand(sql, conn);
         cmd.ExecuteNonQuery();
-	string url = "ViewTopic?topicid=" + topic;
         Response.Redirect(url);
     }
 }
