@@ -40,10 +40,9 @@ public partial class NewTopic : System.Web.UI.Page
         SqlDataReader reader = cmd3.ExecuteReader();
         while (reader.Read())
         {
-            if (Convert.ToString(i) == reader[0].ToString())
-                i++;
+            i = Convert.ToInt32(reader[0].ToString());
         }
-        i--;
+        i++;
 
         string sql = "insert into Message (TopicID,postBody) values(" + i +",'" + messa + "')";
         SqlCommand cmd = new SqlCommand(sql, conn2);
