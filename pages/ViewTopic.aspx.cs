@@ -18,7 +18,7 @@ public partial class ViewTopic : System.Web.UI.Page
     protected void submit2_Click(object sender, EventArgs e)
     {
         string url = HttpContext.Current.Request.Url.ToString();
-        string topic =url.Substring(url.IndexOf("=")+1, 1);
+        string topic =url.Substring(url.IndexOf("=")+1, 2);
         string[] ss = Request.Form.GetValues("con");
         string connection = WebConfigurationManager.ConnectionStrings["DiscussRoomConnectionString"].ConnectionString;
         SqlConnection conn = new SqlConnection(connection);
