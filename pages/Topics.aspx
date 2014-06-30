@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="content">
         <div class="breadcrumbs col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <a class="nav-text" href="#"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>&nbsp;&nbsp;
+            <a class="nav-text" href="../pages"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="Forums?courseid=<%=Request["courseid"]%>">课程</a>&nbsp;&nbsp;
                 <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">讨论室</a>
         </div>
@@ -45,17 +45,15 @@
                     <tr>
                         <td title="No unread posts">
                             <p>
-                                <a href="ViewTopic?topicid=<%#DataBinder.Eval(Container.DataItem, "ID")%>" class="topic-title"><%#DataBinder.Eval(Container.DataItem, "Title")%></a>
+                                <a href="ViewTopic?topicid=<%#DataBinder.Eval(Container.DataItem, "ID")%>&discussroomid=<%=Request["discussroomid"]%>&courseid=<%=Request["courseid"]%>" class="topic-title"><%#DataBinder.Eval(Container.DataItem, "Title")%></a>
                                 <br />
-                                <img src="image/icon_topic_attach.gif" width="7" height="10" alt="Attachment(s)" title="Attachment(s)" />by <a href="" style="color: #AA0000;" class="username-coloured"></a>&raquo; Fri Apr 12, 2013 9:47 pm
+                                <img src="image/icon_topic_attach.gif" width="7" height="10" />Posted <a href="" style="color: #AA0000;" class="username-coloured"></a>&raquo; <%#DataBinder.Eval(Container.DataItem, "Posted")%>
                             </p>
                         </td>
-                        <td class="posts"><%#DataBinder.Eval(Container.DataItem, "ViewCount")%></td>
-                        <td class="lastpost"><span>by <a href="#" style="color: #AA0000;" class="username-coloured"><%#DataBinder.Eval(Container.DataItem, "AuthorName")%></a>
-                            <a href="#">
-                                <img src="/image/icon_topic_latest.png" width="12" height="10" alt="View the latest post" title="View the latest post" /></a>
+                        <td class="post"><span>by <a href="#" style="color: #AA0000;" class="username-coloured"><%#DataBinder.Eval(Container.DataItem, "AuthorName")%></a>
+                            <a href="#"></a>
                             <br />
-                            </span>
+                        </span>
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -64,9 +62,9 @@
                         <thead>
                             <tr class="thead">
                                 <th>Topics</th>
-                                <th class="posts">Replies</th>
 
-                                <th class="lastpost"><span>Last post</span>
+
+                                <th class="post"><span>published</span>
                                 </th>
                             </tr>
                         </thead>
@@ -78,11 +76,11 @@
             </table>
                 </FooterTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString %>" SelectCommand="SELECT * FROM [Topic] WHERE ([DiscussRoomID] = @DiscussRoomID)">
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DiscussRoomConnectionString4 %>" SelectCommand="SELECT * FROM [Topic] WHERE ([DiscussRoomID] = @DiscussRoomID)">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="DiscussRoomID" QueryStringField="discussroomid" Type="Int32" />
                 </SelectParameters>
-  
+
             </asp:SqlDataSource>
         </div>
 
