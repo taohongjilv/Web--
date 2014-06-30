@@ -45,7 +45,7 @@ public partial class NewTopic : System.Web.UI.Page
         }
         i--;
 
-        string sql = "insert into Message (TopicID,postBody,Posted) values(" + i +",'" + messa + "','" + DateTime.Now.ToString() + "')";
+        string sql = "insert into Message (TopicID,postBody) values(" + i +",'" + messa + "')";
         SqlCommand cmd = new SqlCommand(sql, conn2);
         cmd.ExecuteNonQuery();
         reader.Close();

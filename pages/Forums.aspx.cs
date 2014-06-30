@@ -22,8 +22,4 @@ public partial class Forums : System.Web.UI.Page
     {
 
     }
-    protected void repeater_ItemCommand(object source, RepeaterCommandEventArgs e)
-    {
-
-    }
 }

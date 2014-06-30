@@ -11,22 +11,25 @@
         </div>
     <div class="content col-xs-12 col-sm-8 col-md-9 col-lg-9">
         <div class="breadcrumbs">
-            <a class="icon-home nav-text" href="../pages"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>
+            <a class="icon-home nav-text" href="#"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>
         </div>
 
         <div class="forum-list">
-            <asp:Repeater ID="repeater" runat="server" DataSourceID="SqlDataSource4" OnItemCommand="repeater_ItemCommand">
+            <asp:Repeater ID="repeater" runat="server" DataSourceID="SqlDataSource4">
                 <ItemTemplate>
                     <tr>
                         <td title="No unread posts">
                           
                             <p>
-                                <a href="Topics?discussroomid=<%#DataBinder.Eval(Container.DataItem, "ID")%>&courseid=<%=Request["courseid"]%> " class="forum-title"></strong><%#DataBinder.Eval(Container.DataItem, "Name")%>&nbsp;讨论室</a>
+                                <a href="Topics?discussroomid=<%#DataBinder.Eval(Container.DataItem, "ID")%> " class="forum-title"></strong><%#DataBinder.Eval(Container.DataItem, "Name")%>&nbsp;讨论室</a>
                                 <br /><%#DataBinder.Eval(Container.DataItem, "Description")%>
                             </p>
                         </td>
                         <td class="topics"><%#DataBinder.Eval(Container.DataItem, "TopicCount")%></td>
-                        <td class="createtime">
+                        <td class="lastpost"><span>by <a href="#" style="color: #AA0000;" class="username-coloured">PixelGoose</a>
+                            <a href="#">
+                                <img src="/image/icon_topic_latest.png" width="12" height="10" alt="View the latest post" title="View the latest post" /></a>
+                            <br />
                             <%#DataBinder.Eval(Container.DataItem, "CreationTime")%></span>
                         </td>
                     </tr>
@@ -38,7 +41,7 @@
                                 <th class="class">课程</a>
                                 </th>
                                 <th class="topics">主题数</th>
-                                <th class="lastpost"><span>创建日期</span>
+                                <th class="lastpost"><span>最近发表</span>
                                 </th>
                             </tr>
                         </thead>

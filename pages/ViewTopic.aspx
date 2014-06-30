@@ -34,9 +34,9 @@
 
     <div class="content">
         <div class="breadcrumbs col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <a class="nav-text" href="../pages"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>&nbsp;&nbsp;
-                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="Forums?courseid=<%=Request["courseid"]%>">课程</a>&nbsp;&nbsp;
-                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="Topics?discussroomid=<%=Request["discussroomid"]%>">讨论室</a>
+            <a class="nav-text" href="#"><span class="glyphicon glyphicon-home" style="color: #000; margin-right: 10px;"></span>Board index</a>&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">课程</a>&nbsp;&nbsp;
+                <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">讨论室</a>
             <span class="glyphicon glyphicon-hand-right"></span>&nbsp;&nbsp;<a class="nav-text" href="">议题</a>
         </div>
 
@@ -74,8 +74,15 @@
                     </div>
 
                     <dl class="postprofile col-xs-3 col-sm-3 col-md-3 col-lg-3">
-
-                        <dd><strong>posted:</strong> <%#DataBinder.Eval(Container.DataItem, "Posted")%></dd>
+                        <dt>
+                            <a href="">
+                                <img src="js/holder.js?100x100" width="100" height="100" alt="User avatar" /></a><br />
+                            <a href="" style="color: #AA0000;" class="username-coloured">PixelGoose</a>
+                        </dt>
+                        <dd>Site Admin</dd>
+                        <dd>&nbsp;</dd>
+                        <dd><strong>Posts:</strong> 15</dd>
+                        <dd><strong>Joined:</strong> Fri Apr 12, 2013 9:26 pm</dd>
                     </dl>
                     <div class="back2top  col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <a href="#top" class="top" title="Top"><span class="glyphicon glyphicon-circle-arrow-up"></span>&nbsp;TOP</a>
